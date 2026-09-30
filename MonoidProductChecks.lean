@@ -22,7 +22,7 @@ declaration formalizes.
 -- The expected messages are single lines longer than the style limit.
 set_option linter.style.longLine false
 
-/-! ## Main results: commutative aperiodic monoids (`thm:commutative-beta`) -/
+/-! ## Main results: commutative aperiodic monoids (Theorem 18, `thm:commutative-beta`) -/
 
 /-- info: 'MonoidProduct.advPM_prodFun_le_breadth' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -40,7 +40,7 @@ set_option linter.style.longLine false
 #guard_msgs in
 #print axioms MonoidProduct.qQuery_prodFun_le_min_of_breadth_le
 
-/-! ## Main results: stably ordered monoids (`thm:ordered-beta-log-product`) -/
+/-! ## Main results: stably ordered monoids (Theorem 42, `thm:ordered-beta-log-product`) -/
 
 /-- info: 'MonoidProduct.ordered_qQuery_third_le_quasipoly' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -58,7 +58,7 @@ set_option linter.style.longLine false
 #guard_msgs in
 #print axioms MonoidProduct.ordered_truthful_core_alg_quasipoly
 
-/-! ## Main results: aperiodic monoids and semigroups (`thm:ags-cuberoot-size`) -/
+/-! ## Main results: aperiodic monoids and semigroups (Theorem 73, `thm:ags-cuberoot-size`) -/
 
 /-- info: 'MonoidProduct.aperiodic_qQuery_final_exact' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -88,7 +88,7 @@ set_option linter.style.longLine false
 #guard_msgs in
 #print axioms MonoidProduct.aperiodic_semigroup_oneHotQQuery_intro
 
-/-! ## Preliminaries and lower bounds (`sec:prelim`) -/
+/-! ## Preliminaries and lower bounds (Section 3, `sec:prelim`) -/
 
 /-- info: 'MonoidProduct.qQuery_semigroupProd_le_of_division_lift' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -106,7 +106,7 @@ set_option linter.style.longLine false
 #guard_msgs in
 #print axioms MonoidProduct.index_qQuery_lower
 
-/-! ## General techniques (`sec:width`) -/
+/-! ## General techniques (Section 4, `sec:width`) -/
 
 /-- info: 'MonoidProduct.advPM_le_of_summary_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -120,7 +120,7 @@ set_option linter.style.longLine false
 #guard_msgs in
 #print axioms MonoidProduct.advPM_wordProd_le_of_isRTrivial
 
-/-! ## Commutative monoids (`sec:lattice`) -/
+/-! ## Commutative monoids (Section 5, `sec:lattice`) -/
 
 /-- info: 'MonoidProduct.isJTrivialMonoid_of_comm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -150,7 +150,7 @@ set_option linter.style.longLine false
 #guard_msgs in
 #print axioms MonoidProduct.capped_binary_qQuery_lower
 
-/-! ## Minimum-weight matroid bases (`sec:matroid-bases`) -/
+/-! ## Minimum-weight matroid bases (Section 6, `sec:matroid-bases`) -/
 
 /-- info: 'MonoidProduct.Matroid.greedy_union_eq_greedy_union_greedy' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -180,7 +180,7 @@ info: 'MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery' depends on 
 #guard_msgs in
 #print axioms MonoidProduct.Matroid.vectorBasis_minWeight_and_qQuery
 
-/-! ## Ordered monoid products (`sec:beta`) -/
+/-! ## Ordered monoid products (Section 7, `sec:beta`) -/
 
 /-- info: 'MonoidProduct.ordered_qQuery_third_le_five_halves' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -198,7 +198,7 @@ info: 'MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery' depends on 
 #guard_msgs in
 #print axioms MonoidProduct.ordered_qQuery_third_le_logrank
 
-/-! ## Stock and unitriangular products (`sec:applications`, `sec:boolean-unitriangular`) -/
+/-! ## Stock and unitriangular products (Sections 8 and 9) -/
 
 /-- info: 'MonoidProduct.GenStock.gstockProfit_qQuery_third_le' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -216,7 +216,7 @@ info: 'MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery' depends on 
 #guard_msgs in
 #print axioms MonoidProduct.jtrivial_qQuery_le_min
 
-/-! ## The AGS bound and the Dyck obstruction (`sec:ags`) -/
+/-! ## The AGS bound and the Dyck obstruction (Section 10, `sec:ags`) -/
 
 /-- info: 'MonoidProduct.orderedProd_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -242,7 +242,7 @@ info: 'MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery' depends on 
 #guard_msgs in
 #print axioms MonoidProduct.dyckNL_nearLinear_lower
 
-/-! ## The cube-root bound and the envelope (`sec:ags-cuberoot-size`) -/
+/-! ## The cube-root bound and the envelope (Section 11, `sec:ags-cuberoot-size`) -/
 
 /-- info: 'MonoidProduct.solvRec_qQuery_le' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
