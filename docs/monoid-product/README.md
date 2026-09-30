@@ -57,6 +57,7 @@ repository root. Constants are explicit throughout.
 | `aperiodic_qQuery_intro` | The introduction's form `min{n, √n·ln(n+2)^{2^20·(N·ln(N+2))^{1/3}}}` | `MonoidProduct/Quantum/CubeRootApplications.lean` |
 | `aperiodic_semigroup_oneHotQQuery_intro` | Aperiodic semigroups, with `N = \|S\|+1`, in the one-hot value-oracle model | `MonoidProduct/Quantum/CubeRootApplications.lean` |
 | `ags_oneHotQQuery_le_display_logb` | The AGS bound `√n·(2^55(\|M\|+1)^6(log₂(n+1)+3)^2)^{d_J(M)+1}` | `MonoidProduct/Quantum/AGSApplications.lean` |
+| `ags_oneHotQQuery_le_paper` | The AGS bound as displayed in the paper: `min{n, √n·((\|M\|+1)·ln(n+2))^{69(d_J(M)+1)}}` | `MonoidProduct/Quantum/AGSPaper.lean` |
 | `envD_dyck_qQuery_lower` | Dyck monoids `M_k`: `Q_{1/3} ≥ c₀·(2^{1/20})^{d_J(M_k)}·√n` for `1 ≤ k ≤ log₂ n` | `MonoidProduct/Quantum/EnvelopeDisplays.lean` |
 | `envD_aperiodic_envelope` | The worst-case aperiodic envelope is `√n·2^{Θ(N^{1/3})}` up to the power of `L(n)` | `MonoidProduct/Quantum/EnvelopeDisplays.lean` |
 

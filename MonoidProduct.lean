@@ -129,6 +129,7 @@ import MonoidProduct.Ordered.TreeSampling
 import MonoidProduct.Ordered.Verify
 import MonoidProduct.Promise.Semilattice
 import MonoidProduct.Quantum.AGSApplications
+import MonoidProduct.Quantum.AGSPaper
 import MonoidProduct.Quantum.AcceptanceCommutative
 import MonoidProduct.Quantum.AcceptanceE
 import MonoidProduct.Quantum.AcceptanceF
