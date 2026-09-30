@@ -259,3 +259,45 @@ info: 'MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery' depends on 
 /-- info: 'MonoidProduct.aperiodic_envelope_linear' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms MonoidProduct.aperiodic_envelope_linear
+
+/-! ## Displayed forms of further statements -/
+
+/-- info: 'MonoidProduct.idealRank_mono' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.idealRank_mono
+
+/-- info: 'MonoidProduct.prop_identity' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.prop_identity
+
+/-- info: 'MonoidProduct.fixed_monoid_trichotomy_qQuery' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.fixed_monoid_trichotomy_qQuery
+
+/-- info: 'MonoidProduct.fixed_semigroup_trichotomy_qQuery' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.fixed_semigroup_trichotomy_qQuery
+
+/-- info: 'MonoidProduct.qQuery_prodFun_of_subsingleton' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.qQuery_prodFun_of_subsingleton
+
+/-- info: 'MonoidProduct.cappedLen_qQuery_size' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.cappedLen_qQuery_size
+
+/-- info: 'MonoidProduct.hasDual_eqProd_localStep' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.hasDual_eqProd_localStep
+
+/-- info: 'MonoidProduct.qQuery_eqProd_localStep_paper' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.qQuery_eqProd_localStep_paper
+
+/-- info: 'MonoidProduct.rtrivial_qQuery_le_paper' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.rtrivial_qQuery_le_paper
+
+/-- info: 'QuantumQueryComplexity.AncTree.qQuery_third_treeSearch' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms QuantumQueryComplexity.AncTree.qQuery_third_treeSearch

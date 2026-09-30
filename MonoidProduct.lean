@@ -158,7 +158,9 @@ import MonoidProduct.Quantum.OrderedLogAcceptance
 import MonoidProduct.Quantum.OrderedLogApplications
 import MonoidProduct.Quantum.OrderedTruthful
 import MonoidProduct.Quantum.OrderedVerified
+import MonoidProduct.Quantum.PaperForms
 import MonoidProduct.Quantum.RTrivialApplications
+import MonoidProduct.Quantum.RTrivialPaper
 import MonoidProduct.Quantum.SemilatticeApplications
 import MonoidProduct.Quantum.StrictStockApplications
 import MonoidProduct.Quantum.WidthApplications
@@ -180,6 +182,7 @@ import MonoidProduct.Stock.GeneralPrices
 import MonoidProduct.Stock.Strict
 import MonoidProduct.Trichotomy.Index
 import MonoidProduct.Trichotomy.Main
+import MonoidProduct.Trichotomy.PaperForms
 import MonoidProduct.Trichotomy.Semigroup
 import MonoidProduct.Tropical.Breadth
 import MonoidProduct.Tropical.Defs
@@ -214,6 +217,7 @@ import MonoidProduct.Width.SmallClauses
 import MonoidProduct.Width.StableOrder
 import MonoidProduct.Width.Summary
 import MonoidProduct.WidthCerts
+import QuantumQueryComplexity.Quantum.TreeSearch
 
 /-!
 # Quantum query complexity of semigroup and monoid products

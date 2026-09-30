@@ -11,10 +11,9 @@ set_option linter.unusedFintypeInType false
 /-!
 # The AGS theorem, operationally (`thm:main-ags`)
 
-`monoid.tex`, `thm:main-ags`: for a finite aperiodic monoid `M`, the product
-`x₁ ⋯ xₙ` can be computed with `√n·(c·|M|^6·log^6(n|M|))^{D_J(M)}` quantum
-queries (up to the `|M|·λ` product-assembly factor).  This file makes that
-statement operational, in both oracle models, from the exact dual certificate
+`thm:main-ags`: for a finite aperiodic monoid `M` and every `n ≥ 1`,
+`Q_{1/3}(Prod_{M,n}) ≤ min{n, √n·(2^55·(|M|+1)^6·(log₂(n+1)+3)^2)^(D_J(M)+1)}`.
+This file proves that statement, in both oracle models, from the exact dual certificate
 `hasDual_wordProd` (`Aperiodic/Induction.lean`) through the cardinality-free
 uniform extraction `qQueryOn_third_le_of_hasDualOn_uniform`:
 
@@ -29,17 +28,9 @@ uniform extraction `qQueryOn_third_le_of_hasDualOn_uniform`:
   and the same over the real logarithm with `(log₂(n+1)+3)^2`; one-hot at
   `2^55`.
 
-Relative to the manuscript's display, the formal exponent is `D_J(M) + 1`
-rather than `D_J(M)` (the manuscript absorbs the base case's `C₁ log n` into
-the `D_J`-th power "for any nontrivial monoid"; here the base case is charged
-one honest level), while the per-level base is *better*: `|M|^6·log^2` in
-place of `|M|^6·log^6(n|M|)` — no amplification factor `λ` appears, every
-test being an exact dual solution, and the `|M|·λ` assembly factor of the
-manuscript is already absorbed.
-
-This file sits outside the `QuantumQueryComplexity.Quantum` aggregate: it is an
-application layer importing both the quantum model and the classical AGS
-induction.
+The one-hot form at `2^55` is the paper's display; the native model gives
+the same bound at `2^54`.  No amplification factor appears, since every test
+is an exact dual solution.
 -/
 
 namespace MonoidProduct
