@@ -72,7 +72,7 @@ and definitions with the paper also requires mathematical interpretation.
 | (text) | A finite monoid is aperiodic iff it has no nontrivial subgroup | `MonoidProduct.isAperiodicMonoid_iff_not_hasNontrivialSubgroup` | `MonoidProduct/Width/SmallClauses.lean` | |
 | `ex:max` | `(ℕ, max)` has `β = 1`; `O(√n)` queries | `MonoidProduct.MaxNat.breadth_eq_one`, `MonoidProduct.MaxNat.breadth_id_eq_one`, `MonoidProduct.advPM_maxFun_le_of_summary` | `MonoidProduct/Width/SmallClauses.lean`, `MonoidProduct/Width/Instances.lean` | `ADV± ≤ 16√n` for maximum over any finite alphabet. |
 | `ex:union` | `β = m = log₂\|M\|` for `(2^{[m]}, ∪)` | `MonoidProduct.UnionSet.breadth_id_eq`, `MonoidProduct.UnionSet.breadth_id_eq_log` | `MonoidProduct/Width/SmallClauses.lean` | The query upper bound is `thm:semilattice-product`. |
-| `ex:spanning-forest` | Minimum spanning forests: `β = v−1`, `O(√(nβ))` | `MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery`, `MonoidProduct.Matroid.adjacencyArray_minSpanningForest` | `MonoidProduct/Matroid/Graphic.lean` | Through the graphic matroid of `sec:matroid-bases`. |
+| `ex:spanning-forest` | Minimum spanning forests: `β = v−1`, `O(√(nβ))` | `MonoidProduct.Matroid.ex_spanning_forest`, `MonoidProduct.Matroid.weightedSpanningForest_breadth_eq`, `MonoidProduct.Matroid.eRank_graphicMatroid`, `MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery`, `MonoidProduct.Matroid.adjacencyArray_minSpanningForest` | `MonoidProduct/Matroid/GraphicRank.lean`, `MonoidProduct/Matroid/Graphic.lean` | Through the graphic matroid of `sec:matroid-bases`; the rank is exactly `v−1`, so `β = v−1` for weighted edge letters (weight first, then the edge order). The query bound is `min{m, 2^18·√(m(v−1))}` with `m = Σ deg`. |
 | `ex:capped-addition` | Capped addition: `ι = β = m`, `Θ(min{n,√(mn)})` | `MonoidProduct.Capped.aperiodicIndex_eq`, `MonoidProduct.breadth_capped_eq`, `MonoidProduct.cappedLen_qQuery_theta` | `MonoidProduct/Width/SmallClauses.lean`, `MonoidProduct/Capped/Breadth.lean`, `MonoidProduct/Capped/LengthBreadth.lean` | The case `r = 1` of `thm:capped-counter-product`. |
 | `ex:btbs-breadth` | BTBS monoid: `s² = s³`, noncommutative, `β_G = 4`, attained by `(10,2,5,0)` | `MonoidProduct.StrictStock.strictStock_pow_two_eq_pow_three`, `MonoidProduct.StrictStock.strictStock_not_commutative`, `MonoidProduct.StrictStock.isBreadthBound_strict`, `MonoidProduct.GenStock.gstock_sharp_int` | `MonoidProduct/Stock/Aperiodic.lean`, `MonoidProduct/Stock/Strict.lean`, `MonoidProduct/Stock/GeneralPrices.lean` | Integer prices; `prop:stock-beta` covers general prices. |
 | `ex:dyck-breadth` | Dyck monoid: `β = Θ(k)`, yet `Ω(c^k√n)` queries | `MonoidProduct.breadth_dyck`, `MonoidProduct.dyckLB_qQuery` | `MonoidProduct/Dyck/Breadth.lean`, `MonoidProduct/Quantum/DyckLanguageLower.lean` | See `prop:dyck-breadth` and `thm:dyck-lb`. |
@@ -221,7 +221,6 @@ from the literature and are not formalized:
 
 Some statements are formalized in a slightly different form:
 
-- `ex:spanning-forest`: `β ≤ v−1` is proved; the equality `β = v−1` is not.
 - `prop:jtrivial-log-fails`: the lower bound is proved; the informal
   conclusion that no uniform `Õ(√(n log|M|))` bound exists is not stated.
 - `lem:beta-sampling`, `lem:beta-rank-doubling`: every clause is proved for

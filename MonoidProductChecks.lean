@@ -301,3 +301,15 @@ info: 'MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery' depends on 
 /-- info: 'QuantumQueryComplexity.AncTree.qQuery_third_treeSearch' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms QuantumQueryComplexity.AncTree.qQuery_third_treeSearch
+
+/-- info: 'MonoidProduct.Matroid.eRank_graphicMatroid' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Matroid.eRank_graphicMatroid
+
+/-- info: 'MonoidProduct.Matroid.weightedSpanningForest_breadth_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Matroid.weightedSpanningForest_breadth_eq
+
+/-- info: 'MonoidProduct.Matroid.ex_spanning_forest' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Matroid.ex_spanning_forest

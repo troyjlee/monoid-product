@@ -99,6 +99,7 @@ import MonoidProduct.Infix.Uniform
 import MonoidProduct.Layer.Lower
 import MonoidProduct.Matroid
 import MonoidProduct.Matroid.Graphic
+import MonoidProduct.Matroid.GraphicRank
 import MonoidProduct.Matroid.Greedy
 import MonoidProduct.Matroid.GreedyMonoid
 import MonoidProduct.Matroid.GreedyWeight
