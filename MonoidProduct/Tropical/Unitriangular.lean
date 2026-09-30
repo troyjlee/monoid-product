@@ -22,7 +22,7 @@ Section `sec:tropical` of the paper.
 * `UTrop.wordProd_val` / `UTrop.subwordProd_val` identify the library's
   `wordProd` / `subwordProd` with the tropical `linProd` / masked `linProd`, so
   the transition-support core of `Tropical/Breadth.lean`
-  (`exists_core_linProd`, i.e. `prop:path` plus the choice of maximising paths)
+  (`exists_core_linProd`, i.e. `lem:path` plus the choice of maximising paths)
   becomes the breadth bound `utrop_isBreadthBound`:
   `β ≤ V_k = ∑_{s<t} (t − s) = C(k+1, 3)` (`utropV_eq_choose`).
 * `utrop_closure_finite`: a finite alphabet generates a finite submonoid (every

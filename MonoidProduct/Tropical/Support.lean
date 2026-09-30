@@ -11,7 +11,7 @@ set_option linter.unusedFintypeInType false
 The paper selects, for each requested entry `(s,t)` of a
 tropical product, a maximizing path, and takes the positions at which it
 makes strict state transitions; a path from `s` to `t` makes at most `t − s`
-of them (`prop:path`), and retaining only those positions
+of them (`lem:path`), and retaining only those positions
 preserves the entry.  Here the same content is proved **directly by
 induction on the product**, with no paths:
 

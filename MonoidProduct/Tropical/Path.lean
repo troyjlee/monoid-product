@@ -5,9 +5,9 @@ set_option linter.unusedDecidableInType false
 set_option linter.unusedFintypeInType false
 
 /-!
-# The path formula for products in `U_k(𝕋)`: `prop:path`
+# The path formula for products in `U_k(𝕋)`: `lem:path`
 
-The paper's `prop:path` (Section `sec:tropical`): for `A₁, …, Aₙ ∈ U_k(𝕋)` the
+The paper's `lem:path` (Section `sec:tropical`): for `A₁, …, Aₙ ∈ U_k(𝕋)` the
 entry `(A₁ ⋯ Aₙ)_{st}` is the maximum weight of a path
 `s = h₀ ≤ h₁ ≤ ⋯ ≤ hₙ = t` with nondecreasing state indices, of weight
 `∑ᵢ (Aᵢ)_{h_{i-1} h_i}`; a repeated state contributes a diagonal entry `0`, so
@@ -27,12 +27,12 @@ the step `h i.castSucc → h i.succ`).
   the product is the maximum over all paths `s → t` (the matrix product
   expanded).
 * `linProd_eq_sup_tpathMono`: for unitriangular letters, only nondecreasing
-  paths are needed (`prop:path`, the path formula); `tpathMono_monotone_iff`
+  paths are needed (`lem:path`, the path formula); `tpathMono_monotone_iff`
   identifies the stepwise condition with `Monotone`.
 * `tpathWeight_eq_sum_strict`: the weight of a nondecreasing path is the sum
   over its strict transitions only.
 * `card_tpathStrict_le`: a nondecreasing path `s → t` has at most `t − s`
-  strict transitions (`prop:path`, second sentence).
+  strict transitions (`lem:path`, second sentence).
 * `exists_optimal_tpath`: an optimal nondecreasing path exists, and retaining
   exactly its strict-transition positions preserves the entry — the paper's
   path-defined certificate, verbatim.
@@ -175,7 +175,7 @@ lemma tpathWeight_eq_bot_of_step {letter : σ → TMat k} (hL : ∀ a, IsUtri (l
   rw [tpathWeight, ← Finset.add_sum_erase _ _ (Finset.mem_univ i),
     (hL (x i)).below _ _ hi, WithBot.bot_add]
 
-/-- **`prop:path`, the path formula.**  For a unitriangular alphabet the
+/-- **`lem:path`, the path formula.**  For a unitriangular alphabet the
 `(s,t)` entry of `x₀ ⊗ ⋯ ⊗ x_{n-1}` is the maximum, over nondecreasing paths
 `s = h₀ ≤ ⋯ ≤ hₙ = t`, of `∑ᵢ (xᵢ)_{hᵢ h_{i+1}}`. -/
 theorem linProd_eq_sup_tpathMono {letter : σ → TMat k} (hL : ∀ a, IsUtri (letter a))
@@ -233,7 +233,7 @@ lemma card_tpathStrict_add_le :
       · have : ((h (Fin.last n).castSucc : ℕ)) ≤ h (Fin.last (n + 1)) := hstep
         omega
 
-/-- **`prop:path`, second sentence**: a nondecreasing path from `s` to `t`
+/-- **`lem:path`, second sentence**: a nondecreasing path from `s` to `t`
 makes at most `t − s` strict transitions. -/
 theorem card_tpathStrict_le {n : ℕ} {s t : Fin k} {h : Fin (n + 1) → Fin k}
     (hh : h ∈ tpathMono n s t) : (tpathStrict h).card ≤ (t : ℕ) - s := by
@@ -278,7 +278,7 @@ theorem exists_optimal_tpath {letter : σ → TMat k} (hL : ∀ a, IsUtri (lette
 
 /-! ## The bundled monoid -/
 
-/-- **`prop:path` in `U_k(𝕋)`**: the `(s,t)` entry of the monoid product
+/-- **`lem:path` in `U_k(𝕋)`**: the `(s,t)` entry of the monoid product
 `x₁ ⋯ xₙ` is the maximum weight of a nondecreasing path from `s` to `t`. -/
 theorem UTrop.wordProd_val_apply_eq_sup_tpath (letter : σ → UTrop k) {n : ℕ}
     (x : Fin n → σ) (s t : Fin k) :
