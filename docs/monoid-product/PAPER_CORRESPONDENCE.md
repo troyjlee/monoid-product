@@ -221,14 +221,9 @@ from the literature and are not formalized:
 
 Some statements are formalized in a slightly different form:
 
-- `prop:jtrivial-log-fails`: the lower bound is proved; the informal
-  conclusion that no uniform `Õ(√(n log|M|))` bound exists is not stated.
 - `lem:beta-sampling`, `lem:beta-rank-doubling`: every clause is proved for
-  general parameters (the sampling parameter choice for dyadic `N`); the
-  packaged cost bounds are proved in the iterated form used by
-  `thm:ordered-beta-log-product`.
-- `cor:dyck` (iii): proved with height `dyckNL_height ⌈1/ε⌉ n = O_ε(log n)`
-  for `0 < ε < 1`.
+  general parameters; the packaged cost bounds are proved in the iterated
+  form used by `thm:ordered-beta-log-product` (see `rem:ordered-formalization`).
 - Several intermediate lemmas of `sec:width` and `sec:ags` are stated for
   adversary duals (`HasDual`); the query forms follow from the library's
   conversions.
