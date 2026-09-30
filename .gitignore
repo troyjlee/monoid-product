@@ -1,0 +1,6 @@
+/.lake/
+.DS_Store
+__pycache__/
+*.pyc
+/scripts/forbidden-patterns.local.txt
+/Scratch.lean

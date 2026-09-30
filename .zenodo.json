@@ -1,0 +1,27 @@
+{
+  "title": "MonoidProduct: a Lean formalization of the quantum query complexity of the semigroup product problem",
+  "upload_type": "software",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "creators": [
+    {
+      "name": "Lee, Troy",
+      "orcid": "0000-0001-6912-2338",
+      "affiliation": "University of Technology Sydney"
+    }
+  ],
+  "description": "<p>A machine-checked Lean 4 formalization, over Mathlib, of the results of <em>The quantum query complexity of the semigroup product problem</em> by Troy Lee and Miklos Santha. The problem is to compute a product x<sub>1</sub>&middot;&middot;&middot;x<sub>n</sub> in a fixed finite semigroup, when one query reveals one input element and the multiplication table is given.</p><p>The <em>product breadth</em> &beta; is the smallest bound such that every input word has a subsequence of at most &beta; letters with the same product. For nontrivial finite commutative aperiodic monoids the bounded-error quantum query complexity is &Theta;(min{n, &radic;(n&beta;)}), and a monoid with aperiodicity index k has &beta; = O(k log(|M|+1) log log(|M|+2)). For monoids with a stable partial order whose minimum is the identity, the complexity is at most &radic;(n+1)((&beta;+2) log(n+2))<sup>O(log(&beta;+2))</sup>, with applications to the best time to buy and sell stock problem and to products of unitriangular tropical matrices. For arbitrary finite aperiodic semigroups of order N&minus;1, the complexity is at most min{n, &radic;n log<sup>O((N log(N+2))<sup>1/3</sup>)</sup>(n+2)}.</p><p>The development builds on the QuantumQueryComplexity library and on the Rao&ndash;Bell&ndash;Chueluecha&ndash;Warnke sunflower bound. The Lean sources are sorry-free; a checks file included in the default build verifies with <code>#guard_msgs</code> that the headline theorems depend on exactly [propext, Classical.choice, Quot.sound].</p>",
+  "keywords": [
+    "Lean 4",
+    "Mathlib",
+    "formalized mathematics",
+    "interactive theorem proving",
+    "quantum query complexity",
+    "adversary bound",
+    "semigroups",
+    "monoids",
+    "product breadth",
+    "aperiodic semigroups",
+    "theoretical computer science"
+  ]
+}

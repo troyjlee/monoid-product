@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this library, please cite it using this metadata and the release or commit used."
+title: "MonoidProduct: a Lean formalization of the quantum query complexity of the semigroup product problem"
+type: software
+version: 0.1.0
+authors:
+  - family-names: Lee
+    given-names: Troy
+    orcid: "https://orcid.org/0000-0001-6912-2338"
+    affiliation: "University of Technology Sydney"
+license: Apache-2.0
+repository-code: "https://github.com/troyjlee/monoid-product"
+keywords:
+  - Lean 4
+  - Mathlib
+  - formalized mathematics
+  - quantum query complexity
+  - adversary bound
+  - semigroups
+  - monoids
+  - product breadth
+  - aperiodic semigroups
+abstract: >-
+  A machine-checked Lean 4 formalization, over Mathlib, of the results of
+  "The quantum query complexity of the semigroup product problem" by Troy Lee
+  and Miklos Santha. The problem is to compute a product x_1 ... x_n in a
+  fixed finite semigroup when one query reveals one input element. For
+  nontrivial finite commutative aperiodic monoids the bounded-error quantum
+  query complexity is Theta(min{n, sqrt(n beta)}), where the product breadth
+  beta bounds the length of a product-preserving subsequence. The library also
+  covers monoids with a stable partial order whose minimum is the identity,
+  and arbitrary finite aperiodic semigroups. It builds on the
+  QuantumQueryComplexity library and the Rao-BCW sunflower bound.

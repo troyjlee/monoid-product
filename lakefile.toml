@@ -1,0 +1,40 @@
+name = "MonoidProduct"
+version = "0.1.0"
+description = "The quantum query complexity of the semigroup product problem, formalized in Lean"
+license = "Apache-2.0"
+homepage = "https://github.com/troyjlee/monoid-product"
+keywords = ["quantum", "query-complexity", "semigroups", "formalization", "mathlib"]
+defaultTargets = ["MonoidProduct", "MonoidProductChecks"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0-rc2"
+
+[[require]]
+name = "QuantumQueryComplexity"
+git = "https://github.com/troyjlee/quantum-query-complexity"
+rev = "517ba85eb211232771429804d8583e3f52b9d541"
+
+[[require]]
+name = "TCSFormalizations"
+git = "https://github.com/troyjlee/tcs-formalizations"
+rev = "55d7c9c11ee4240328a71b1ab43d66f27a976da6"
+
+[[lean_lib]]
+name = "MonoidProduct"
+
+[lean_lib.leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[lean_lib]]
+name = "MonoidProductChecks"
+
+[lean_lib.leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
