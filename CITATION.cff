@@ -10,6 +10,14 @@ authors:
     affiliation: "University of Technology Sydney"
 license: Apache-2.0
 repository-code: "https://github.com/troyjlee/monoid-product"
+doi: "10.5281/zenodo.23063464"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23063464"
+    description: "Concept DOI (all versions)"
+  - type: doi
+    value: "10.5281/zenodo.23063465"
+    description: "Version 0.1.0"
 keywords:
   - Lean 4
   - Mathlib

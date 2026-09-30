@@ -1,8 +1,7 @@
 # MonoidProduct: quantum query complexity of semigroup products in Lean
 
 [![CI](https://github.com/troyjlee/monoid-product/actions/workflows/ci.yml/badge.svg)](https://github.com/troyjlee/monoid-product/actions/workflows/ci.yml)
-<!-- Zenodo DOI badge: add after the first release is archived, e.g.
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23063464.svg)](https://doi.org/10.5281/zenodo.23063464)
 
 A Lean 4 and Mathlib formalization of *The quantum query complexity of the
 semigroup product problem* by Troy Lee and Miklos Santha. The problem is to
