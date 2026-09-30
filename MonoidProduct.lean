@@ -55,6 +55,7 @@ import MonoidProduct.Aperiodic.Ideals
 import MonoidProduct.Aperiodic.Induction
 import MonoidProduct.Aperiodic.Infix
 import MonoidProduct.Aperiodic.InfixCost
+import MonoidProduct.Aperiodic.InfixPaper
 import MonoidProduct.Aperiodic.Prefix
 import MonoidProduct.Aperiodic.RTrivial
 import MonoidProduct.Aperiodic.Semigroup

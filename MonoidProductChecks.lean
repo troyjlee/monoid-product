@@ -313,3 +313,7 @@ info: 'MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery' depends on 
 /-- info: 'MonoidProduct.Matroid.ex_spanning_forest' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms MonoidProduct.Matroid.ex_spanning_forest
+
+/-- info: 'MonoidProduct.hasDual_badInfixFor_paper' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.hasDual_badInfixFor_paper
