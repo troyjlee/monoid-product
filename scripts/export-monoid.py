@@ -46,11 +46,13 @@ LIB = "MonoidProduct"
 # Markdown working notes, planning labels, and section-sign references to
 # unpublished drafts.
 FORBIDDEN = [
-    r"\.md\b",
-    r"\bMilestone\b",
-    r"\bTier [A-D]",
-    r"followup",
+    r"(?<!PAPER_CORRESPONDENCE)(?<!README)\.md\b",
+    r"(?i)\bmilestone",
+    r"\bTier ?[A-D]\b",
+    r"(?i)followup(?!Acceptance)",
     r"§",
+    r"\b20[0-9]{2}-[0-9]{2}-[0-9]{2}\b",
+    r"monoid\.tex`?,? (Theorem|Lemma|Thm|Proposition|Corollary|Definition|Section) ?[0-9]",
 ]
 
 # Additional patterns (one regular expression per line; blank lines and lines

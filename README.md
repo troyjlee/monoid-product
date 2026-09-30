@@ -25,17 +25,30 @@ product.
   aperiodic monoid, the bounded-error quantum query complexity is
   `Θ(min{n, √(nβ)})`. A monoid `M` with aperiodicity index `k` has
   `β = O(k log(|M|+1) log log(|M|+2))`, and products of capped counters
-  nearly match this bound.
+  nearly match this bound. Lean: `advPM_prodFun_le_breadth`,
+  `commutative_qQuery_sandwich`, `breadth_le_indexK_paper` and
+  `cappedLen_qQuery_theta`. As an application, a minimum-weight basis of a
+  rank-`r` matroid is computed with `O(min{n, √(nr)})` queries
+  (`Matroid.matroidBasis_minWeight_and_qQuery`).
 - **Stably ordered monoids.** For a monoid with a stable partial order whose
   minimum is the identity, the bounded-error quantum query complexity is at
   most `√(n+1) · ((β+2) log(n+2))^O(log(β+2))`. Applications include the best
   time to buy and sell stock problem and products of unitriangular tropical
-  matrices of fixed dimension, each with `Õ(√n)` queries.
+  matrices of fixed dimension, each with `Õ(√n)` queries. Lean:
+  `ordered_qQuery_third_le_quasipoly` and
+  `ordered_truthful_core_alg_quasipoly`, with the applications
+  `GenStock.gstockProfit_qQuery_third_le` and `utrop_qQuery_third_le_paper`.
 - **Finite aperiodic semigroups.** For a finite aperiodic semigroup of order
   `N−1`, the bounded-error quantum query complexity is at most
   `min{n, √n · log^O((N log(N+2))^(1/3))(n+2)}`. Bounded-depth Dyck languages
   give aperiodic monoids requiring `√n · 2^Ω(N^(1/3))` queries in the
-  relevant parameter range.
+  relevant parameter range. Lean: `aperiodic_qQuery_intro`,
+  `aperiodic_qQuery_final_exact` and
+  `aperiodic_semigroup_oneHotQQuery_intro`, with the lower bounds
+  `envD_dyck_qQuery_lower` and `envD_aperiodic_envelope`.
+
+All names are in the `MonoidProduct` namespace, and every `O(·)` is an
+explicit constant in Lean.
 
 ## Dependencies
 
