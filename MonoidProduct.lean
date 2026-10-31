@@ -69,6 +69,12 @@ import MonoidProduct.Capped.Lower
 import MonoidProduct.Capped.RTrivial
 import MonoidProduct.Capped.Theta
 import MonoidProduct.Capped.Width
+import MonoidProduct.Certificates
+import MonoidProduct.Certificates.Acceptance
+import MonoidProduct.Certificates.Basic
+import MonoidProduct.Certificates.Breadth
+import MonoidProduct.Certificates.ExtensionMonoid
+import MonoidProduct.Certificates.Quantum
 import MonoidProduct.Dyck.Amplify
 import MonoidProduct.Dyck.AndStar
 import MonoidProduct.Dyck.Blocks
@@ -99,6 +105,7 @@ import MonoidProduct.Infix.TypedDual
 import MonoidProduct.Infix.Uniform
 import MonoidProduct.Layer.Lower
 import MonoidProduct.Matroid
+import MonoidProduct.Matroid.Certificates
 import MonoidProduct.Matroid.Graphic
 import MonoidProduct.Matroid.GraphicRank
 import MonoidProduct.Matroid.Greedy

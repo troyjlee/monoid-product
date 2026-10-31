@@ -40,7 +40,7 @@ set_option linter.style.longLine false
 #guard_msgs in
 #print axioms MonoidProduct.qQuery_prodFun_le_min_of_breadth_le
 
-/-! ## Main results: stably ordered monoids (Theorem 42, `thm:ordered-beta-log-product`) -/
+/-! ## Main results: stably ordered monoids (Theorem 46, `thm:ordered-beta-log-product`) -/
 
 /-- info: 'MonoidProduct.ordered_qQuery_third_le_quasipoly' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -58,7 +58,7 @@ set_option linter.style.longLine false
 #guard_msgs in
 #print axioms MonoidProduct.ordered_truthful_core_alg_quasipoly
 
-/-! ## Main results: aperiodic monoids and semigroups (Theorem 73, `thm:ags-cuberoot-size`) -/
+/-! ## Main results: aperiodic monoids and semigroups (Theorem 77, `thm:ags-cuberoot-size`) -/
 
 /-- info: 'MonoidProduct.aperiodic_qQuery_final_exact' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
@@ -150,6 +150,60 @@ set_option linter.style.longLine false
 #guard_msgs in
 #print axioms MonoidProduct.capped_binary_qQuery_lower
 
+/-! ## Strong certificates and product breadth (Section 6, `sec:strong-certificates`) -/
+
+/-- info: 'MonoidProduct.Certificates.strongCertificateSize_eq_sup' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Certificates.strongCertificateSize_eq_sup
+
+/-- info: 'MonoidProduct.Certificates.extensionLetter_breadth_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Certificates.extensionLetter_breadth_eq
+
+/-- info: 'MonoidProduct.Certificates.extensionMonoid_breadth_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Certificates.extensionMonoid_breadth_eq
+
+/-- info: 'MonoidProduct.Certificates.certificate_breadth' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Certificates.certificate_breadth
+
+/--
+info: 'MonoidProduct.Certificates.card_extensionMonoid_le_sum_choose' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Certificates.card_extensionMonoid_le_sum_choose
+
+/--
+info: 'MonoidProduct.Certificates.strongCertificate_qQuery_le_min_sqrt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Certificates.strongCertificate_qQuery_le_min_sqrt
+
+/--
+info: 'MonoidProduct.Certificates.strongCertificate_qQuery_le_min_sqrt_of_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Certificates.strongCertificate_qQuery_le_min_sqrt_of_bound
+
+/-- info: 'MonoidProduct.Certificates.strongCertificate_qQuery_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Certificates.strongCertificate_qQuery_eq_zero
+
+/--
+info: 'MonoidProduct.Certificates.encodedCertificate_qQuery_le_min_sqrt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Certificates.encodedCertificate_qQuery_le_min_sqrt
+
 /-! ## Minimum-weight matroid bases (Section 6, `sec:matroid-bases`) -/
 
 /-- info: 'MonoidProduct.Matroid.greedy_union_eq_greedy_union_greedy' depends on axioms: [propext, Classical.choice, Quot.sound] -/
@@ -179,6 +233,42 @@ info: 'MonoidProduct.Matroid.minSpanningForest_minWeight_and_qQuery' depends on 
 /-- info: 'MonoidProduct.Matroid.vectorBasis_minWeight_and_qQuery' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms MonoidProduct.Matroid.vectorBasis_minWeight_and_qQuery
+
+/-- info: 'MonoidProduct.Matroid.extensionEquiv_greedy_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Matroid.extensionEquiv_greedy_iff
+
+/-- info: 'MonoidProduct.Matroid.greedy_strongCertificateSize_eq_rank' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Matroid.greedy_strongCertificateSize_eq_rank
+
+/-- info: 'MonoidProduct.Matroid.extensionMonoidGreedyMulEquiv' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Matroid.extensionMonoidGreedyMulEquiv
+
+/--
+info: 'MonoidProduct.Matroid.matroidBasisRecords_qQuery_le_min_sqrt_of_certificates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Matroid.matroidBasisRecords_qQuery_le_min_sqrt_of_certificates
+
+/--
+info: 'MonoidProduct.Matroid.matroidBasisIndices_qQuery_le_min_sqrt_of_certificates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Matroid.matroidBasisIndices_qQuery_le_min_sqrt_of_certificates
+
+/--
+info: 'MonoidProduct.Matroid.matroidBasisRecords_qQuery_eq_zero_of_certificates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Matroid.matroidBasisRecords_qQuery_eq_zero_of_certificates
 
 /-! ## Ordered monoid products (Section 7, `sec:beta`) -/
 

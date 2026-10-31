@@ -48,6 +48,8 @@ repository root. Constants are explicit throughout.
 | `commutative_qQuery_lower_total` | The lower bound over the full alphabet of a nontrivial `M` | `MonoidProduct/Quantum/CommutativeLower.lean` |
 | `breadth_le_indexK_paper` | `x^{k+1} = x^k`: `β ≤ 2^64·(k+1)(log₂\|M\|+1)·log(log₂\|M\|+2)` | `MonoidProduct/Width/PaperForms.lean` |
 | `cappedLen_qQuery_theta` | Capped counters `M_{k,r}`: `Q_{1/3} = Θ(√(n·min{n,kr}))`, explicit constants | `MonoidProduct/Capped/LengthBreadth.lean` |
+| `Certificates.certificate_breadth` | For `f : Finset U → O`: `β_{A_f}(M_f) = β(M_f) = b_f(U)`, the largest minimum strong-certificate size | `MonoidProduct/Certificates/Breadth.lean` |
+| `Certificates.strongCertificate_qQuery_le_min_sqrt` | `f` of the nonnull records among `n`: `Q_{1/3} ≤ min{n, 2^18·√(n·b_f(U))}` | `MonoidProduct/Certificates/Quantum.lean` |
 | `Matroid.matroidBasis_minWeight_and_qQuery` | Minimum-weight basis of a rank-`r` matroid from `n` weighted records, `Q_{1/3} ≤ min{n, 2^18·√(nr)}` | `MonoidProduct/Matroid/Quantum.lean` |
 | `ordered_qQuery_third_le_quasipoly` | Stably ordered `M`, breadth bound `b`: `Q_{1/3} ≤ min{n, √(n+1)·(C(b+2)·log(n+2))^{C·log(b+2)}}`, `C = 2^17` | `MonoidProduct/Quantum/OrderedLogApplications.lean` |
 | `ordered_truthful_core_alg_quasipoly` | The same bound (with `C = 2^18`) for an algorithm that returns a product-preserving record of at most `b` positions with probability `9/10`, truthful on every branch | `MonoidProduct/Quantum/OrderedTruthful.lean` |
@@ -71,7 +73,8 @@ directories under `MonoidProduct/` are:
 | `Width/` | Product breadth (`breadth`, `IsBreadthBound`), incremental summaries and the essential-width adversary theorem (total and promise forms), stable orders, and the commutative breadth bounds: idempotent, index two, and general index via the Rao–BCW sunflower bound. `Width/PaperForms.lean` and `Width/SmallClauses.lean` state several results in the paper's exact form. |
 | `Semilattice/`, `Promise/` | Commutative idempotent products and join closures; the instance-sensitive promise bound. |
 | `Capped/` | Capped counters `M_{k,r}`: breadth `kr`, the matching adversary lower bound, and the `R`-trivial depth. |
-| `Matroid/` | Greedy bases, the greedy-basis monoid, weighted records, and minimum-weight bases of general, uniform, partition, graphic and vector matroids. |
+| `Certificates/` | Equivalence under extensions, strong certificates and their size `b_f(U)`, the extension monoid and its cardinality bound, `β = b_f(U)`, and the query bound from strong certificates, also for position-dependent encodings. `Certificates/Acceptance.lean` pins the exact form of these statements. |
+| `Matroid/` | Greedy bases, the greedy-basis monoid, weighted records, and minimum-weight bases of general, uniform, partition, graphic and vector matroids. `Matroid/Certificates.lean` identifies greedy bases with strong certificates and rederives the basis query bound from them. |
 | `Ordered/` | Stably ordered monoids: records, seeded sampling and merging, median frontiers, tree sampling, and rank doubling. |
 | `Stock/`, `Tropical/` | Best time to buy and sell stock (integer and general prices) and unitriangular tropical matrices, including the path formula. |
 | `UT/`, `Simon/` | Boolean unitriangular monoids `UT_k(𝔹)` and Simon's theorem for `J`-trivial monoids. |
@@ -89,7 +92,8 @@ The main results live in `Quantum/CommutativeLower.lean` and
 `Width/Breadth.lean` (commutative monoids),
 `Quantum/OrderedLogApplications.lean` and `Quantum/OrderedTruthful.lean`
 (stably ordered monoids), `Quantum/CubeRootApplications.lean` (aperiodic
-monoids and semigroups), and `Matroid/Quantum.lean` (matroid bases).
+monoids and semigroups), `Certificates/Quantum.lean` (strong certificates)
+and `Matroid/Quantum.lean` (matroid bases).
 
 ## Build
 

@@ -26,8 +26,11 @@ product.
   `β = O(k log(|M|+1) log log(|M|+2))`, and products of capped counters
   nearly match this bound. Lean: `advPM_prodFun_le_breadth`,
   `commutative_qQuery_sandwich`, `breadth_le_indexK_paper` and
-  `cappedLen_qQuery_theta`. As an application, a minimum-weight basis of a
-  rank-`r` matroid is computed with `O(min{n, √(nr)})` queries
+  `cappedLen_qQuery_theta`. As applications, a function `f` of a set of
+  `n` records whose strong certificates have at most `b` elements is
+  computed with `O(min{n, √(nb)})` queries
+  (`Certificates.strongCertificate_qQuery_le_min_sqrt`), and a
+  minimum-weight basis of a rank-`r` matroid with `O(min{n, √(nr)})` queries
   (`Matroid.matroidBasis_minWeight_and_qQuery`).
 - **Stably ordered monoids.** For a monoid with a stable partial order whose
   minimum is the identity, the bounded-error quantum query complexity is at
