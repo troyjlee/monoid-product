@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.0
 
 - Strong certificates (`MonoidProduct.Certificates`, the paper's Section
   6.1): equivalence under extensions, strong certificates and the

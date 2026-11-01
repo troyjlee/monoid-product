@@ -1,5 +1,5 @@
 name = "MonoidProduct"
-version = "0.1.0"
+version = "0.2.0"
 description = "The quantum query complexity of the semigroup product problem, formalized in Lean"
 license = "Apache-2.0"
 homepage = "https://github.com/troyjlee/monoid-product"
