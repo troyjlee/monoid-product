@@ -31,7 +31,14 @@ product.
   computed with `O(min{n, √(nb)})` queries
   (`Certificates.strongCertificate_qQuery_le_min_sqrt`), and a
   minimum-weight basis of a rank-`r` matroid with `O(min{n, √(nr)})` queries
-  (`Matroid.matroidBasis_minWeight_and_qQuery`).
+  (`Matroid.matroidBasis_minWeight_and_qQuery`). For graphs on `v` known
+  vertices, the component partition, two-colourings, cycle detection,
+  planarity and every fixed proper minor-closed class have certificates of
+  `O(v)` edges, hence `O(v^{3/2})` adjacency-matrix queries
+  (`Graph.minorClosed_strongCertificateSize_le_linear`), and the edge- and
+  vertex-failure profiles cost `Θ(min{v², v^{3/2}√k})` matrix queries
+  (`Graph.edgeFailureProfile_qMatrix_theta`,
+  `Graph.vertexFailureProfile_qMatrix_theta`).
 - **Stably ordered monoids.** For a monoid with a stable partial order whose
   minimum is the identity, the bounded-error quantum query complexity is at
   most `√(n+1) · ((β+2) log(n+2))^O(log(β+2))`. Applications include the best
