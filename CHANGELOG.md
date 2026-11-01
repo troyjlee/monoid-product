@@ -46,6 +46,35 @@
     certificate and query bounds;
   - planarity is invariant under isomorphism, and planar graphs have
     genus `0`.
+- Planar subgraphs (`Graph/RotationPermutation.lean`,
+  `Graph/RotationDeletion.lean`, `Graph/PlanarSubgraph.lean`):
+  - cycle counts of permutations, fixed points included, under a
+    transposition (which splits or merges cycles) and under erasing
+    elements (`cycleCount_mul_swap_of_sameCycle`, `cycleCount_eraseOne`);
+  - the Euler defect `2C − V + E − F̂` of a rotation system and its change
+    when an edge is deleted: none for a bridge or for an edge whose darts
+    lie on two faces, minus two otherwise (`eulerDefect_deleteEdge_le`);
+  - Euler's inequality `V − E + F ≤ 2` in every component, for every
+    rotation system (`eulerDefect_nonneg`,
+    `ncard_supp_add_ncard_facesIn_le`), and sphericity as defect zero
+    (`isSpherical_iff_eulerDefect_eq_zero`); every rotation system of a
+    forest is spherical;
+  - planarity is closed under subgraphs and induced subgraphs
+    (`IsPlanar.mono`, `IsPlanar.deleteEdges`, `IsPlanar.induce`).
+- Planar minors (`Graph/MinorContraction.lean`, `Graph/PlanarContraction.lean`,
+  `Graph/PlanarMinor.lean`, `Graph/Wagner.lean`):
+  - contracting an edge keeps the Euler defect when its ends have no common
+    neighbour (`eulerDefect_contract`), and common neighbours can be thinned
+    away first, so planarity is closed under edge contraction
+    (`IsPlanar.contractEdge`);
+  - minor models pass through contractions inside a branch set
+    (`MinorModel.contractEdge`), so planarity is closed under injective
+    homomorphisms and minors (`IsPlanar.of_injective`, `IsPlanar.of_minor`);
+  - the easy direction of Wagner's theorem: a planar graph has no `K₅` and
+    no `K₃,₃` minor (`IsPlanar.wagner_easy`); planarity is a proper
+    minor-closed class (`isMinorClosed_isPlanar`, `isProperClass_isPlanar`);
+  - the Petersen graph is not planar, by its `K₅` minor, although it is
+    within the edge bound `3v − 6`.
 - Graph query models (`Graph/QueryModels.lean`, `Graph/Quantum.lean`):
   - edge lists (`qList`), adjacency matrices (`qMatrix`) and valid
     adjacency arrays with public degrees (`qAdj`, `qAdjEdges`);

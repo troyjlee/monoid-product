@@ -1484,6 +1484,726 @@ info: 'MonoidProduct.Graph.not_isPlanar_completeBipartite_three_three' depends o
 #guard_msgs in
 #print axioms MonoidProduct.Graph.planarity_qAdjEdges_le
 
+/-! ## Planar subgraphs: Euler's inequality and edge deletion -/
+
+/-- info: 'MonoidProduct.Graph.natCard_quotient_eq_add_one_of_join' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.natCard_quotient_eq_add_one_of_join
+
+/-- info: 'MonoidProduct.Graph.natCard_quotient_eq_of_join' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.natCard_quotient_eq_of_join
+
+/-- info: 'MonoidProduct.Graph.pow_apply_eq_of_forall_lt' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.pow_apply_eq_of_forall_lt
+
+/-- info: 'MonoidProduct.Graph.pow_apply_eq_pow_mod_apply' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.pow_apply_eq_pow_mod_apply
+
+/-- info: 'MonoidProduct.Graph.exists_first_pow_mem' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.exists_first_pow_mem
+
+/-- info: 'MonoidProduct.Graph.exists_pos_pow_apply_eq_self' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.exists_pos_pow_apply_eq_self
+
+/-- info: 'MonoidProduct.Graph.sameCycle_iff_of_agree' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_iff_of_agree
+
+/-- info: 'MonoidProduct.Graph.sameCycle_or_of_agree' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_or_of_agree
+
+/-- info: 'MonoidProduct.Graph.mul_swap_apply_of_ne' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.mul_swap_apply_of_ne
+
+/-- info: 'MonoidProduct.Graph.pow_mul_swap_apply' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.pow_mul_swap_apply
+
+/-- info: 'MonoidProduct.Graph.sameCycle_mul_swap_of_not_sameCycle' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_mul_swap_of_not_sameCycle
+
+/-- info: 'MonoidProduct.Graph.not_sameCycle_mul_swap_of_sameCycle' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.not_sameCycle_mul_swap_of_sameCycle
+
+/-- info: 'MonoidProduct.Graph.sameCycle_of_mul_swap' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_of_mul_swap
+
+/-- info: 'MonoidProduct.Graph.sameCycle_iff_mul_swap_of_sameCycle' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_iff_mul_swap_of_sameCycle
+
+/-- info: 'MonoidProduct.Graph.sameCycle_mul_swap_iff_of_not_sameCycle' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_mul_swap_iff_of_not_sameCycle
+
+/-- info: 'MonoidProduct.Graph.cycleCount_mul_swap_of_sameCycle' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.cycleCount_mul_swap_of_sameCycle
+
+/-- info: 'MonoidProduct.Graph.cycleCount_mul_swap_of_not_sameCycle' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.cycleCount_mul_swap_of_not_sameCycle
+
+/-- info: 'MonoidProduct.Graph.cycleCount_eq_add_of_sameCycle_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.cycleCount_eq_add_of_sameCycle_iff
+
+/-- info: 'MonoidProduct.Graph.sameCycle_permCongr' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_permCongr
+
+/-- info: 'MonoidProduct.Graph.cycleCount_permCongr' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.cycleCount_permCongr
+
+/-- info: 'MonoidProduct.Graph.bypass_apply_self' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.bypass_apply_self
+
+/-- info: 'MonoidProduct.Graph.bypass_apply_of_ne' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.bypass_apply_of_ne
+
+/-- info: 'MonoidProduct.Graph.bypass_of_apply_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.bypass_of_apply_eq
+
+/-- info: 'MonoidProduct.Graph.bypass_eq_mul_swap' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.bypass_eq_mul_swap
+
+/-- info: 'MonoidProduct.Graph.apply_bypass_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.apply_bypass_eq
+
+/-- info: 'MonoidProduct.Graph.sameCycle_bypass_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_bypass_iff
+
+/-- info: 'MonoidProduct.Graph.cycleCount_bypass' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.cycleCount_bypass
+
+/-- info: 'MonoidProduct.Graph.bypass_apply_ne_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.bypass_apply_ne_iff
+
+/-- info: 'MonoidProduct.Graph.eraseOne_apply' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.eraseOne_apply
+
+/-- info: 'MonoidProduct.Graph.sameCycle_eraseOne_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_eraseOne_iff
+
+/-- info: 'MonoidProduct.Graph.cycleCount_subtypePerm_add' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.cycleCount_subtypePerm_add
+
+/-- info: 'MonoidProduct.Graph.cycleCount_eraseOne' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.cycleCount_eraseOne
+
+/-- info: 'MonoidProduct.Graph.bypass_bypass_apply_left' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.bypass_bypass_apply_left
+
+/-- info: 'MonoidProduct.Graph.bypass_bypass_apply_ne_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.bypass_bypass_apply_ne_iff
+
+/-- info: 'MonoidProduct.Graph.eraseTwo_apply' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.eraseTwo_apply
+
+/-- info: 'MonoidProduct.Graph.eraseOne_eraseOne_apply' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.eraseOne_eraseOne_apply
+
+/-- info: 'MonoidProduct.Graph.sameCycle_eraseTwo_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sameCycle_eraseTwo_iff
+
+/-- info: 'MonoidProduct.Graph.cycleCount_eraseTwo' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.cycleCount_eraseTwo
+
+/-- info: 'MonoidProduct.Graph.cycleCount_eraseTwo_add' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.cycleCount_eraseTwo_add
+
+/-- info: 'MonoidProduct.Graph.bypass_permCongr' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.bypass_permCongr
+
+/-- info: 'MonoidProduct.Graph.eraseOne_permCongr' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.eraseOne_permCongr
+
+/-- info: 'MonoidProduct.Graph.finite_dart' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.finite_dart
+
+/-- info: 'MonoidProduct.Graph.dart_edge_ne_iff' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.dart_edge_ne_iff
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.rot_ne_symm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.rot_ne_symm
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.rot_symm_ne' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.rot_symm_ne
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.rot_eq_self_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.rot_eq_self_iff
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.fst_bypass_bypass_rot' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.fst_bypass_bypass_rot
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.bypass_bypass_rot_symm' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.bypass_bypass_rot_symm
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.deleteEdge_face' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.deleteEdge_face
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.natCard_face_deleteEdge_add' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.natCard_face_deleteEdge_add
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.fst_mem_isolatedVerts_deleteEdges_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.fst_mem_isolatedVerts_deleteEdges_iff
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.mem_isolatedVerts_deleteEdges_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.mem_isolatedVerts_deleteEdges_iff
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.ncard_isolatedVerts_deleteEdges' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.ncard_isolatedVerts_deleteEdges
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.completedFaceCount_deleteEdge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.completedFaceCount_deleteEdge
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.completedFaceCount_deleteEdge_of_sameCycle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.completedFaceCount_deleteEdge_of_sameCycle
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.completedFaceCount_deleteEdge_of_not_sameCycle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.completedFaceCount_deleteEdge_of_not_sameCycle
+
+/-- info: 'MonoidProduct.Graph.reachable_iff_deleteEdges' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.reachable_iff_deleteEdges
+
+/--
+info: 'MonoidProduct.Graph.natCard_connectedComponent_deleteEdges_of_isBridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.natCard_connectedComponent_deleteEdges_of_isBridge
+
+/--
+info: 'MonoidProduct.Graph.natCard_connectedComponent_deleteEdges_of_not_isBridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.natCard_connectedComponent_deleteEdges_of_not_isBridge
+
+/-- info: 'MonoidProduct.Graph.ncard_edgeSet_deleteEdges_add_one' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.ncard_edgeSet_deleteEdges_add_one
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.sameCycle_face_of_isBridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.sameCycle_face_of_isBridge
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.eulerDefect_deleteEdge_of_isBridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.eulerDefect_deleteEdge_of_isBridge
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.eulerDefect_deleteEdge_of_not_sameCycle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.eulerDefect_deleteEdge_of_not_sameCycle
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.eulerDefect_deleteEdge_of_sameCycle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.eulerDefect_deleteEdge_of_sameCycle
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.eulerDefect_deleteEdge_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.eulerDefect_deleteEdge_le
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.eulerDefect_eq_zero_of_edgeSet_eq_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.eulerDefect_eq_zero_of_edgeSet_eq_empty
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.eulerDefect_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.eulerDefect_nonneg
+
+/-- info: 'MonoidProduct.Graph.sum_ncard_inter_preimage' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.sum_ncard_inter_preimage
+
+/-- info: 'MonoidProduct.Graph.eq_of_reachable_of_mem_isolatedVerts' does not depend on any axioms -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.eq_of_reachable_of_mem_isolatedVerts
+
+/-- info: 'MonoidProduct.Graph.isolatedVerts_inter_supp_eq_empty' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.isolatedVerts_inter_supp_eq_empty
+
+/-- info: 'MonoidProduct.Graph.supp_subset_isolatedVerts' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.supp_subset_isolatedVerts
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.facesIn_eq_empty' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.facesIn_eq_empty
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.componentDefect_of_nonempty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.componentDefect_of_nonempty
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.componentDefect_of_not_nonempty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.componentDefect_of_not_nonempty
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.eulerDefect_eq_finsum' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.eulerDefect_eq_finsum
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.isSpherical_iff_forall_componentDefect_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.isSpherical_iff_forall_componentDefect_eq_zero
+
+/-- info: 'MonoidProduct.Graph.exists_reachable_induce_of_walk_closed' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.exists_reachable_induce_of_walk_closed
+
+/-- info: 'MonoidProduct.Graph.induceComponentMap_mk' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.induceComponentMap_mk
+
+/-- info: 'MonoidProduct.Graph.supp_induceComponentMap' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.supp_induceComponentMap
+
+/-- info: 'MonoidProduct.Graph.componentEdges_induceComponentMap' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.componentEdges_induceComponentMap
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.fst_face_mem_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.fst_face_mem_iff
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.restrict_face' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.restrict_face
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.sameCycle_restrict_face_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.sameCycle_restrict_face_iff
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.restrictFaceMap_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.restrictFaceMap_injective
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.facesIn_induceComponentMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.facesIn_induceComponentMap
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.componentDefect_restrict' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.componentDefect_restrict
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.IsSpherical.restrict' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.IsSpherical.restrict
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.componentDefect_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.componentDefect_nonneg
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.ncard_supp_add_ncard_facesIn_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.ncard_supp_add_ncard_facesIn_le
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.isSpherical_iff_eulerDefect_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.isSpherical_iff_eulerDefect_eq_zero
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.IsSpherical.deleteEdge' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.IsSpherical.deleteEdge
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.IsSpherical.sameCycle_face_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.IsSpherical.sameCycle_face_iff
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.eulerDefect_eq_zero_of_isAcyclic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.eulerDefect_eq_zero_of_isAcyclic
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.IsSpherical.of_isAcyclic' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.IsSpherical.of_isAcyclic
+
+/-- info: 'MonoidProduct.Graph.IsPlanar.deleteEdges_singleton' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.deleteEdges_singleton
+
+/-- info: 'MonoidProduct.Graph.IsPlanar.mono' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.mono
+
+/-- info: 'MonoidProduct.Graph.IsPlanar.deleteEdges' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.deleteEdges
+
+/-- info: 'MonoidProduct.Graph.IsPlanar.induce' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.induce
+
+/-- info: 'MonoidProduct.Graph.isSpherical_k4Rotation' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.isSpherical_k4Rotation
+
+/-! ## Planar minors: contraction and the easy direction of Wagner's theorem -/
+
+/-- info: 'MonoidProduct.Graph.contractVertex_of_ne' does not depend on any axioms -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractVertex_of_ne
+
+/-- info: 'MonoidProduct.Graph.contractVertex_self' does not depend on any axioms -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractVertex_self
+
+/-- info: 'MonoidProduct.Graph.contractVertex_val' does not depend on any axioms -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractVertex_val
+
+/-- info: 'MonoidProduct.Graph.val_contractVertex' does not depend on any axioms -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.val_contractVertex
+
+/-- info: 'MonoidProduct.Graph.contractVertex_eq_iff' depends on axioms: [propext] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractVertex_eq_iff
+
+/-- info: 'MonoidProduct.Graph.contractEdge_adj_contractVertex' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractEdge_adj_contractVertex
+
+/-- info: 'MonoidProduct.Graph.contractVertex_eq_or_adj' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractVertex_eq_or_adj
+
+/-- info: 'MonoidProduct.Graph.reachable_contractVertex' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.reachable_contractVertex
+
+/-- info: 'MonoidProduct.Graph.reachable_of_reachable_contractEdge' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.reachable_of_reachable_contractEdge
+
+/-- info: 'MonoidProduct.Graph.reachable_val_contractVertex' does not depend on any axioms -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.reachable_val_contractVertex
+
+/-- info: 'MonoidProduct.Graph.natCard_connectedComponent_contractEdge' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.natCard_connectedComponent_contractEdge
+
+/-- info: 'MonoidProduct.Graph.IsConnectedSet.image_of_eq_or_adj' depends on axioms: [propext] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsConnectedSet.image_of_eq_or_adj
+
+/-- info: 'MonoidProduct.Graph.IsConnectedSet.exists_adj_of_ne' does not depend on any axioms -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsConnectedSet.exists_adj_of_ne
+
+/-- info: 'MonoidProduct.Graph.MinorModel.branch_contractEdge' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.MinorModel.branch_contractEdge
+
+/-- info: 'MonoidProduct.Graph.natCard_subtype_ne_and_ne_add_two' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.natCard_subtype_ne_and_ne_add_two
+
+/-- info: 'MonoidProduct.Graph.natCard_subtype_ne_add_one' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.natCard_subtype_ne_add_one
+
+/-- info: 'MonoidProduct.Graph.two_mul_ncard_edgeSet_eq_natCard_dart' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.two_mul_ncard_edgeSet_eq_natCard_dart
+
+/-- info: 'MonoidProduct.Graph.contractEdge_adj_of_dart' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractEdge_adj_of_dart
+
+/-- info: 'MonoidProduct.Graph.contractDart_survivorSymm' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractDart_survivorSymm
+
+/-- info: 'MonoidProduct.Graph.contractDart_surjective' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractDart_surjective
+
+/-- info: 'MonoidProduct.Graph.contractDart_injective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractDart_injective
+
+/-- info: 'MonoidProduct.Graph.contractDartEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractDartEquiv_apply
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.contractVertex_fst_rot_mul_swap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.contractVertex_fst_rot_mul_swap
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.contract_rot' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.contract_rot
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.bypass_bypass_rot_mul_swap_symm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.bypass_bypass_rot_mul_swap_symm
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.contract_face' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.contract_face
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.natCard_face_contract_add' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.natCard_face_contract_add
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.rot_eq_self_and_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.rot_eq_self_and_iff
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.ncard_isolatedVerts_contractEdge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.ncard_isolatedVerts_contractEdge
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.natCard_contractEdge_vertices_add_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.natCard_contractEdge_vertices_add_one
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.ncard_edgeSet_contractEdge_add_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.ncard_edgeSet_contractEdge_add_one
+
+/--
+info: 'MonoidProduct.Graph.RotationSystem.completedFaceCount_contract' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.completedFaceCount_contract
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.eulerDefect_contract' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.eulerDefect_contract
+
+/-- info: 'MonoidProduct.Graph.RotationSystem.IsSpherical.contract' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.RotationSystem.IsSpherical.contract
+
+/-- info: 'MonoidProduct.Graph.deleteEdges_thinEdges_adj_iff' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.deleteEdges_thinEdges_adj_iff
+
+/-- info: 'MonoidProduct.Graph.deleteEdges_thinEdges_adj' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.deleteEdges_thinEdges_adj
+
+/--
+info: 'MonoidProduct.Graph.disjoint_neighborSet_deleteEdges_thinEdges' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.disjoint_neighborSet_deleteEdges_thinEdges
+
+/-- info: 'MonoidProduct.Graph.contractEdge_deleteEdges_thinEdges' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.contractEdge_deleteEdges_thinEdges
+
+/-- info: 'MonoidProduct.Graph.IsPlanar.contractEdge' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.contractEdge
+
+/-- info: 'MonoidProduct.Graph.IsPlanar.of_injective' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.of_injective
+
+/-- info: 'MonoidProduct.Graph.IsPlanar.of_minor' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.of_minor
+
+/-- info: 'MonoidProduct.Graph.IsPlanar.not_isMinor_top_five' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.not_isMinor_top_five
+
+/--
+info: 'MonoidProduct.Graph.IsPlanar.not_isMinor_completeBipartite_three_three' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+-/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.not_isMinor_completeBipartite_three_three
+
+/-- info: 'MonoidProduct.Graph.IsPlanar.wagner_easy' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.IsPlanar.wagner_easy
+
+/-- info: 'MonoidProduct.Graph.isMinorClosed_isPlanar' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.isMinorClosed_isPlanar
+
+/-- info: 'MonoidProduct.Graph.isProperClass_isPlanar' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.Graph.isProperClass_isPlanar
+
 /-! ## Minor-closed and sparse graph classes (Section 6, `sec:graph-certificates`) -/
 
 /-- info: 'MonoidProduct.Graph.restrictTo_adj' does not depend on any axioms -/

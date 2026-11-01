@@ -38,7 +38,9 @@ product.
   (`Graph.minorClosed_strongCertificateSize_le_linear`), and the edge- and
   vertex-failure profiles cost `Θ(min{v², v^{3/2}√k})` matrix queries
   (`Graph.edgeFailureProfile_qMatrix_theta`,
-  `Graph.vertexFailureProfile_qMatrix_theta`).
+  `Graph.vertexFailureProfile_qMatrix_theta`). Planarity is closed under
+  minors, so planar graphs have no `K₅` and no `K₃,₃` minor
+  (`Graph.IsPlanar.wagner_easy`).
 - **Stably ordered monoids.** For a monoid with a stable partial order whose
   minimum is the identity, the bounded-error quantum query complexity is at
   most `√(n+1) · ((β+2) log(n+2))^O(log(β+2))`. Applications include the best

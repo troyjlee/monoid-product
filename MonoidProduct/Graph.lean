@@ -30,6 +30,15 @@ import MonoidProduct.Graph.Minor
 import MonoidProduct.Graph.Mader
 import MonoidProduct.Graph.SparseClasses
 import MonoidProduct.Graph.SparseClassesAcceptance
+import MonoidProduct.Graph.RotationPermutation
+import MonoidProduct.Graph.RotationDeletion
+import MonoidProduct.Graph.PlanarSubgraph
+import MonoidProduct.Graph.PlanarSubgraphAcceptance
+import MonoidProduct.Graph.MinorContraction
+import MonoidProduct.Graph.PlanarContraction
+import MonoidProduct.Graph.PlanarMinor
+import MonoidProduct.Graph.Wagner
+import MonoidProduct.Graph.PlanarMinorAcceptance
 set_option linter.style.header false
 
 /-!
@@ -49,7 +58,11 @@ The query models: edge lists, adjacency matrices and adjacency arrays, compared 
 
 Planarity: planar graphs as graphs with a spherical rotation system (a combinatorial embedding
 of genus `0`), the edge bound `3v - 6`, certificates of at most `min{C(v, 2), 3v - 5}` edges, and
-the query bounds; `K₄` is planar, and `K₅` and `K₃,₃` are not.
+the query bounds; `K₄` is planar, and `K₅` and `K₃,₃` are not.  Euler's inequality
+`V − E + F ≤ 2` in every component, for every rotation system, through the Euler defect and its
+behaviour under edge deletion; planarity is closed under subgraphs, induced subgraphs, edge
+contraction and minors, so planar graphs have no `K₅` and no `K₃,₃` minor (the easy direction of
+Wagner's theorem).
 
 Minor-closed classes: graph minors, Mader's theorem, and the linear edge bound of every proper
 minor-closed class, so `b_P = O_P(v)`; outerplanarity (through the apex graph), bounded treewidth
