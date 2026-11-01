@@ -4,10 +4,12 @@ set_option linter.style.header false
 /-!
 # Planarity is invariant under isomorphism
 
-`IsPlanar.of_iso`: an isomorphism `G ≃g G'` carries a spherical rotation system of `G` to one of
-`G'`: the darts correspond (`dartEquivOfIso`), the rotation is conjugated, the faces correspond
-(`sameCycle_iff_of_semiconj`), and the components, with their vertices, edges and faces,
-correspond.  So planarity is a property of the graph, not of its labelling.
+An isomorphism `G ≃g G'` carries a rotation system of `G` to one of `G'`
+(`RotationSystem.mapIso`): the darts correspond (`dartEquivOfIso`) and the rotation is
+conjugated, so the faces correspond (`mapIso_face_apply`, `sameCycle_iff_of_semiconj`).  The
+components, with their vertices, edges and faces, correspond too, so a spherical rotation system
+stays spherical (`RotationSystem.IsSpherical.mapIso`), and `IsPlanar.of_iso` follows: planarity
+is a property of the graph, not of its labelling.
 -/
 
 namespace MonoidProduct.Graph
@@ -36,27 +38,47 @@ theorem dartEquivOfIso_symm_symm (e : G ≃g G') (d : G'.Dart) :
 private theorem connectedComponentEquiv_mk (e : G ≃g G') (v : V) :
     e.connectedComponentEquiv (G.connectedComponentMk v) = G'.connectedComponentMk (e v) := rfl
 
-/-- **Planarity is invariant under isomorphism.** -/
-theorem IsPlanar.of_iso (e : G ≃g G') (h : IsPlanar G) : IsPlanar G' := by
+namespace RotationSystem
+
+/-- **A rotation system carried along an isomorphism**: the rotation conjugated by the
+correspondence of darts. -/
+def mapIso (e : G ≃g G') (ρ : RotationSystem G) : RotationSystem G' where
+  rot := (dartEquivOfIso e).permCongr ρ.rot
+  fst_rot d := by
+    rw [Equiv.permCongr_apply, fst_dartEquivOfIso, ρ.fst_rot, fst_dartEquivOfIso_symm,
+      e.apply_symm_apply]
+  sameCycle_rot d d' hdd' := by
+    have hrot : ∀ x, (dartEquivOfIso e).permCongr ρ.rot (dartEquivOfIso e x) =
+        dartEquivOfIso e (ρ.rot x) := fun x => by
+      rw [Equiv.permCongr_apply, Equiv.symm_apply_apply]
+    have hs := ρ.sameCycle_rot ((dartEquivOfIso e).symm d) ((dartEquivOfIso e).symm d') (by
+      rw [fst_dartEquivOfIso_symm, fst_dartEquivOfIso_symm, hdd'])
+    have := (sameCycle_iff_of_semiconj hrot (dartEquivOfIso e).injective).mpr hs
+    rwa [Equiv.apply_symm_apply, Equiv.apply_symm_apply] at this
+
+theorem mapIso_rot_apply (e : G ≃g G') (ρ : RotationSystem G) (d : G.Dart) :
+    (ρ.mapIso e).rot (dartEquivOfIso e d) = dartEquivOfIso e (ρ.rot d) := by
+  change (dartEquivOfIso e).permCongr ρ.rot _ = _
+  rw [Equiv.permCongr_apply, Equiv.symm_apply_apply]
+
+/-- **Faces correspond under an isomorphism**: the face permutation is conjugated too. -/
+theorem mapIso_face_apply (e : G ≃g G') (ρ : RotationSystem G) (d : G.Dart) :
+    (ρ.mapIso e).face (dartEquivOfIso e d) = dartEquivOfIso e (ρ.face d) := by
+  rw [face_apply, face_apply]
+  exact mapIso_rot_apply e ρ d.symm
+
+theorem face_mapIso (e : G ≃g G') (ρ : RotationSystem G) :
+    (ρ.mapIso e).face = (dartEquivOfIso e).permCongr ρ.face := by
+  refine Equiv.ext fun d => ?_
+  rw [Equiv.permCongr_apply, ← mapIso_face_apply, Equiv.apply_symm_apply]
+
+/-- **A spherical rotation system stays spherical under an isomorphism.** -/
+theorem IsSpherical.mapIso (e : G ≃g G') {ρ : RotationSystem G} (hρ : ρ.IsSpherical) :
+    (ρ.mapIso e).IsSpherical := by
   classical
-  obtain ⟨ρ, hρ⟩ := h
   set D := dartEquivOfIso e
-  have hrot : ∀ x, D.permCongr ρ.rot (D x) = D (ρ.rot x) := fun x => by
-    rw [Equiv.permCongr_apply, Equiv.symm_apply_apply]
-  let ρ' : RotationSystem G' :=
-    { rot := D.permCongr ρ.rot
-      fst_rot := fun d => by
-        rw [Equiv.permCongr_apply, fst_dartEquivOfIso, ρ.fst_rot, fst_dartEquivOfIso_symm,
-          e.apply_symm_apply]
-      sameCycle_rot := fun d d' hdd' => by
-        have hs := ρ.sameCycle_rot (D.symm d) (D.symm d') (by
-          rw [fst_dartEquivOfIso_symm, fst_dartEquivOfIso_symm, hdd'])
-        have := (sameCycle_iff_of_semiconj hrot D.injective).mpr hs
-        rwa [D.apply_symm_apply, D.apply_symm_apply] at this }
-  have hface : ∀ x, ρ'.face (D x) = D (ρ.face x) := fun x => by
-    rw [RotationSystem.face_apply, RotationSystem.face_apply]
-    change D.permCongr ρ.rot (D x).symm = D (ρ.rot x.symm)
-    rw [show (D x).symm = D x.symm from rfl, hrot]
+  set ρ' := ρ.mapIso e
+  have hface : ∀ x, ρ'.face (D x) = D (ρ.face x) := mapIso_face_apply e ρ
   -- The faces correspond.
   let Φ : ρ.Face → ρ'.Face := Quotient.map D fun _ _ h =>
     (sameCycle_iff_of_semiconj hface D.injective).mpr h
@@ -65,7 +87,7 @@ theorem IsPlanar.of_iso (e : G ≃g G') (h : IsPlanar G) : IsPlanar G' := by
     induction f using Quotient.inductionOn
     induction f' using Quotient.inductionOn
     exact Quotient.sound ((sameCycle_iff_of_semiconj hface D.injective).mp (Quotient.exact hff))
-  refine ⟨ρ', fun c' hc' => ?_⟩
+  intro c' hc'
   set c := e.connectedComponentEquiv.symm c'
   have hcc : e.connectedComponentEquiv c = c' := Equiv.apply_symm_apply _ _
   have hmk : ∀ v, G'.connectedComponentMk (e v) = c' ↔ G.connectedComponentMk v = c := fun v => by
@@ -129,6 +151,13 @@ theorem IsPlanar.of_iso (e : G ≃g G') (h : IsPlanar G) : IsPlanar G' := by
   rw [hsupp, hedges, hfaces, Set.ncard_image_of_injective _ e.injective,
     Set.ncard_image_of_injective _ (Sym2.map.injective e.injective), hΦ.injOn.ncard_image]
   exact heul
+
+end RotationSystem
+
+/-- **Planarity is invariant under isomorphism.** -/
+theorem IsPlanar.of_iso (e : G ≃g G') (h : IsPlanar G) : IsPlanar G' := by
+  obtain ⟨ρ, hρ⟩ := h
+  exact ⟨ρ.mapIso e, hρ.mapIso e⟩
 
 /-- **Isomorphic graphs are planar together.** -/
 theorem isPlanar_iff_of_iso (e : G ≃g G') : IsPlanar G ↔ IsPlanar G' :=

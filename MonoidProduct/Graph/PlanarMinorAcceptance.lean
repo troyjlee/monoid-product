@@ -505,9 +505,9 @@ end Path
 
 section Model
 
-/-- **A minor model of `K₂` in `K₄`**: the branch sets `{0, 1}` and `{2}`.  The vertex `3` is
-unused, and only one of the five edges between or inside the branch sets is needed, besides
-`{0, 1}`. -/
+/-- **A minor model of `K₂` in `K₄`**: the branch sets `{0, 1}` and `{2}`.  The vertex `3` and its
+three edges are unused.  Three edges lie between or inside the branch sets: `{0, 1}` inside, and
+`{0, 2}` and `{1, 2}` between; besides `{0, 1}`, only one of the two between is needed. -/
 private def k2InK4 : MinorModel (⊤ : SimpleGraph (Fin 2)) (⊤ : SimpleGraph (Fin 4)) where
   branch w := if w = 0 then {0, 1} else {2}
   connected w := by

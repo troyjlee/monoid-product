@@ -39,6 +39,27 @@ import MonoidProduct.Graph.PlanarContraction
 import MonoidProduct.Graph.PlanarMinor
 import MonoidProduct.Graph.Wagner
 import MonoidProduct.Graph.PlanarMinorAcceptance
+import MonoidProduct.Graph.CycleArcs
+import MonoidProduct.Graph.WagnerConnectivity
+import MonoidProduct.Graph.WagnerConnectivityAcceptance
+import MonoidProduct.Graph.FaceWalk
+import MonoidProduct.Graph.FaceWalkAcceptance
+import MonoidProduct.Graph.WagnerObstructions
+import MonoidProduct.Graph.WagnerObstructionsAcceptance
+import MonoidProduct.Graph.WagnerContractible
+import MonoidProduct.Graph.WagnerContractibleAcceptance
+import MonoidProduct.Graph.RotationSplit
+import MonoidProduct.Graph.RotationFaces
+import MonoidProduct.Graph.RotationFacesAcceptance
+import MonoidProduct.Graph.RotationChord
+import MonoidProduct.Graph.RotationInsert
+import MonoidProduct.Graph.RotationInsertAcceptance
+import MonoidProduct.Graph.PlanarGlueVertex
+import MonoidProduct.Graph.PlanarGlue
+import MonoidProduct.Graph.PlanarGlueAcceptance
+import MonoidProduct.Graph.WagnerConverse
+import MonoidProduct.Graph.WagnerConverseAcceptance
+import MonoidProduct.Graph.WagnerAcceptance
 set_option linter.style.header false
 
 /-!
@@ -62,7 +83,18 @@ the query bounds; `K₄` is planar, and `K₅` and `K₃,₃` are not.  Euler's 
 `V − E + F ≤ 2` in every component, for every rotation system, through the Euler defect and its
 behaviour under edge deletion; planarity is closed under subgraphs, induced subgraphs, edge
 contraction and minors, so planar graphs have no `K₅` and no `K₃,₃` minor (the easy direction of
-Wagner's theorem).
+Wagner's theorem).  `k`-connectivity, proper separations and their marker-edge minors, and arcs of
+cyclic lists; face walks of rotation systems, and rotation systems carried along isomorphisms;
+the `K₅` and `K₃,₃` models of an edge attached to a cycle, and the interval lemma: in a graph with
+neither minor, if each end of an edge has at least two neighbours on a cycle avoiding it, the
+neighbours of one end lie between two consecutive neighbours of the other end; every
+`3`-connected graph on at least five vertices has an edge whose contraction is `3`-connected; in a
+spherical rotation system of a `2`-connected graph every face is a cycle, and deleting a vertex
+leaves a spherical rotation system with a face through all its neighbours; a chord, a leaf, or a
+new vertex joined to vertices of one face can be inserted keeping the rotation system spherical,
+with the new faces explicit; disjoint unions of planar graphs, and planar graphs glued at a vertex
+or along an edge, are planar.  Conversely, a finite graph with neither a `K₅` nor a `K₃,₃` minor is
+planar, so the two excluded minors characterize planarity (Wagner's theorem, `wagner_iff`).
 
 Minor-closed classes: graph minors, Mader's theorem, and the linear edge bound of every proper
 minor-closed class, so `b_P = O_P(v)`; outerplanarity (through the apex graph), bounded treewidth

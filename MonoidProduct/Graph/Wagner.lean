@@ -1,10 +1,14 @@
 import MonoidProduct.Graph.Mader
 import MonoidProduct.Graph.PlanarExamples
 import MonoidProduct.Graph.PlanarMinor
+import MonoidProduct.Graph.WagnerConverse
 set_option linter.style.header false
 
 /-!
-# The easy direction of Wagner's theorem
+# Wagner's theorem
+
+**A finite graph is planar exactly when it has neither a `K₅` minor nor a `K₃,₃` minor**
+(`wagner_iff`).
 
 **A planar graph has neither a `K₅` minor nor a `K₃,₃` minor** (`IsPlanar.wagner_easy`).  Planarity
 is `IsPlanar` (`Graph/Planar.lean`: a rotation system satisfying Euler's formula in every component
@@ -17,7 +21,9 @@ Planarity is closed under minors (`IsPlanar.of_minor`), and `K₅` and `K₃,₃
 (`isMinorClosed_isPlanar`, `isProperClass_isPlanar`).
 
 The converse, that a finite graph with neither minor is planar, is the hard direction of Wagner's
-theorem and is not formalized here.
+theorem, `wagner_hard` (`Graph/WagnerConverse.lean`).  Together they give `wagner_iff`, for the
+combinatorial planarity of `Graph/Planar.lean`; its equivalence with drawings in the plane is the
+cited rotation principle, not formalized here.
 -/
 
 namespace MonoidProduct.Graph
@@ -42,6 +48,13 @@ theorem IsPlanar.wagner_easy (hG : IsPlanar G) :
     ¬ IsMinor (⊤ : SimpleGraph (Fin 5)) G ∧
       ¬ IsMinor (completeBipartiteGraph (Fin 3) (Fin 3)) G :=
   ⟨hG.not_isMinor_top_five, hG.not_isMinor_completeBipartite_three_three⟩
+
+/-- **Wagner's theorem**: a graph on a finite vertex type is planar exactly when it has neither a
+`K₅` minor nor a `K₃,₃` minor. -/
+theorem wagner_iff : IsPlanar G ↔
+    ¬ IsMinor (⊤ : SimpleGraph (Fin 5)) G ∧
+      ¬ IsMinor (completeBipartiteGraph (Fin 3) (Fin 3)) G :=
+  ⟨fun hG => hG.wagner_easy, fun h => wagner_hard h.1 h.2⟩
 
 /-- **Planarity is a minor-closed class.** -/
 theorem isMinorClosed_isPlanar : IsMinorClosed fun _ G => IsPlanar G :=

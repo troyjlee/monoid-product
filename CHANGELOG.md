@@ -75,6 +75,77 @@
     minor-closed class (`isMinorClosed_isPlanar`, `isProperClass_isPlanar`);
   - the Petersen graph is not planar, by its `K₅` minor, although it is
     within the edge bound `3v − 6`.
+- Connectivity and cyclic arcs (`Graph/WagnerConnectivity.lean`,
+  `Graph/CycleArcs.lean`):
+  - `k`-connectivity (`IsKConnected`), which agrees with `isVertexConnected`;
+    monotonicity, the degree bound, vertex deletion and minimum separators;
+  - proper separations from separators, with smaller sides; every vertex of
+    a minimum separator has a neighbour in every component of the rest
+    (`exists_adj_reachable`);
+  - marker edges: for a separator `{x, y}` of a `2`-connected graph, each
+    side with the edge `xy` added is a minor of the graph
+    (`isMinor_sup_edge_induce_left`, `isMinor_sup_edge_induce_right`);
+  - arcs of cyclic lists: distances, membership, rotation invariance,
+    concatenation, disjointness, consecutive marks, and connectedness along
+    a cycle of the graph.
+- Face walks (`Graph/FaceWalk.lean`):
+  - orbits of permutations as lists (`orbitList`), with their members,
+    rotation along the cycle, and the identification of a list shifted
+    cyclically by a permutation as an orbit (`orbitList_eq_of_getElem`);
+  - the darts and the walk of the face through a dart (`faceDarts`,
+    `faceWalk`): adjacency of consecutive vertices, and a walk without
+    repeated vertices is a cycle of the graph (`isCycleList_faceWalk`);
+  - rotation systems carried along isomorphisms (`RotationSystem.mapIso`),
+    which stay spherical and carry face walks to face walks
+    (`IsSpherical.mapIso`, `faceWalk_mapIso`); `IsPlanar.of_iso` now
+    follows from them.
+- Obstructions on a cycle (`Graph/WagnerObstructions.lean`): for an edge
+  `xy` and a cycle avoiding it, three common neighbours of `x` and `y` on
+  the cycle give a `K₅` minor and four alternating ones a `K₃,₃` minor, with
+  explicit branch sets of arcs (`isMinor_top_five_of_three_common`,
+  `isMinor_completeBipartite_of_alternating`); in a graph with neither minor,
+  if `x` and `y` each have at least two neighbours on the cycle, the
+  neighbours of `y` lie on the closed arc between two consecutive neighbours
+  of `x` (`exists_isConsecutive_subset_closedArc`).
+- A contractible edge (`Graph/WagnerContractible.lean`): every `3`-connected
+  graph on at least five vertices has an edge whose contraction is
+  `3`-connected (`exists_contractEdge_isKConnected_three`); contracting an
+  edge of a `(k + 1)`-connected graph leaves a `k`-connected graph
+  (`isKConnected_contractEdge`), and an edge fails exactly when it lies in a
+  separating triple (`isKConnected_contractEdge_three_iff`).
+- Faces of `2`-connected embeddings (`Graph/RotationSplit.lean`,
+  `Graph/RotationFaces.lean`): in a spherical rotation system of a
+  `2`-connected graph distinct darts of a face have distinct tails, so every
+  face walk is a cycle (`RotationSystem.fst_injective_on_face`,
+  `RotationSystem.isCycleList_faceWalk_of_isKConnected`), by splitting a
+  vertex into two (`RotationSystem.splitRotation`, Euler defect `-2`);
+  deleting a vertex leaves a spherical rotation system
+  (`exists_rotationSystem_induce_ne`) with, for a `2`-connected graph, a face
+  through all the neighbours of the deleted vertex
+  (`exists_induce_ne_faceWalk`).
+- Insertions into faces (`Graph/RotationChord.lean`,
+  `Graph/RotationInsert.lean`): a chord between two corners of one face, with
+  the two new faces read off as lists of darts (`RotationSystem.insertChord`,
+  `faceDarts_insertChord`), keeps a rotation system spherical, so joining two
+  vertices of one face keeps planarity (`isPlanar_sup_edge_of_sameCycle`); a
+  leaf at a corner (`RotationSystem.insertLeaf`); a new vertex joined to
+  vertices of a face without repeated vertices (`attachVertex`), keeping a
+  face through the new vertex and a whole closed interval of the old face
+  (`exists_isSpherical_attachVertex_faceWalk`), and its planarity
+  (`isPlanar_attachVertex_of_subset_faceWalk`).
+- Gluing planar graphs (`Graph/PlanarGlueVertex.lean`, `Graph/PlanarGlue.lean`):
+  disjoint unions of planar graphs are planar (`IsPlanar.sum`), and so are
+  two planar graphs glued at a vertex (`IsPlanar.glueVertex`, with a marked
+  version keeping two chosen faces in one, `exists_isSpherical_glueVertex`);
+  a graph whose two sides of a separation are planar is planar when the
+  separator is empty, one vertex, or the two ends of an edge
+  (`isPlanar_of_induce_of_inter_eq_empty`, `_singleton`, `_pair`).
+- Wagner's theorem (`Graph/WagnerConverse.lean`, `Graph/Wagner.lean`): a
+  finite graph with neither a `K₅` minor nor a `K₃,₃` minor is planar
+  (`wagner_hard`), first for `3`-connected graphs (`wagner_threeConnected`);
+  with the easy direction, a graph on a finite vertex type is planar exactly
+  when it has neither minor (`wagner_iff`); acceptance examples in
+  `Graph/WagnerAcceptance.lean`.
 - Graph query models (`Graph/QueryModels.lean`, `Graph/Quantum.lean`):
   - edge lists (`qList`), adjacency matrices (`qMatrix`) and valid
     adjacency arrays with public degrees (`qAdj`, `qAdjEdges`);
