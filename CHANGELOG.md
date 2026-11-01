@@ -204,6 +204,14 @@
   among the headline statements.
 - `MonoidProductChecks.lean` guards the axioms of every public theorem of
   the Section 6 modules.
+- The sampling lemma and the rank-doubling lemma of the ordered-product
+  section as standalone statements in the paper's form, with explicit
+  constants: `beta_sampling` (`lem:beta-sampling`, cost
+  `768·β·T·√h·L^{3/2}`, `Ordered/BetaSampling.lean`) and `rank_doubling`
+  (`lem:beta-rank-doubling`, for an arbitrary rank-`r` family with arbitrary
+  seed weights, cost `5760·β·A·L⁴·√m`, `Ordered/RankDoublingLemma.lean`).
+  The recursion behind the logarithmic-exponent theorem applies exactly this
+  doubling step (`summary2_succ_succ_eq`).
 
 ## 0.1.0
 

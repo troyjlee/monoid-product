@@ -181,6 +181,7 @@ import MonoidProduct.Matroid.Records
 import MonoidProduct.Matroid.Selection
 import MonoidProduct.Matroid.Vector
 import MonoidProduct.Matroid.Width
+import MonoidProduct.Ordered.BetaSampling
 import MonoidProduct.Ordered.Correct
 import MonoidProduct.Ordered.Cost
 import MonoidProduct.Ordered.FiniteProb
@@ -191,8 +192,10 @@ import MonoidProduct.Ordered.LogRankRoot
 import MonoidProduct.Ordered.MedianFrontier
 import MonoidProduct.Ordered.Merge
 import MonoidProduct.Ordered.MergeSeeded
+import MonoidProduct.Ordered.PaperLemmasAcceptance
 import MonoidProduct.Ordered.PiProb
 import MonoidProduct.Ordered.RankDoubling
+import MonoidProduct.Ordered.RankDoublingLemma
 import MonoidProduct.Ordered.Records
 import MonoidProduct.Ordered.Root
 import MonoidProduct.Ordered.Summary

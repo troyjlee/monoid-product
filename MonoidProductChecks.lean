@@ -5246,6 +5246,72 @@ info: 'MonoidProduct.Graph.vertexFailureProfile_one_strongCertificateSize' depen
 #guard_msgs in
 #print axioms MonoidProduct.ordered_qQuery_third_le_logrank
 
+/-! ## The sampling and rank-doubling lemmas (Section 7, `lem:beta-sampling`, `lem:beta-rank-doubling`) -/
+
+/-- info: 'MonoidProduct.beta_sampling_explicit' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.beta_sampling_explicit
+
+/-- info: 'MonoidProduct.beta_sampling' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.beta_sampling
+
+/-- info: 'MonoidProduct.amp_fail_le_of_weight' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.amp_fail_le_of_weight
+
+/-- info: 'MonoidProduct.copy_fail_le_of_weight' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.copy_fail_le_of_weight
+
+/-- info: 'MonoidProduct.path_sum_le_of' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.path_sum_le_of
+
+/-- info: 'MonoidProduct.all_sum_eq_of' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.all_sum_eq_of
+
+/-- info: 'MonoidProduct.path_cost_le_of' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.path_cost_le_of
+
+/-- info: 'MonoidProduct.dblCost_le' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.dblCost_le
+
+/-- info: 'MonoidProduct.isWeight_dblW' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.isWeight_dblW
+
+/-- info: 'MonoidProduct.dblFamily_spec' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.dblFamily_spec
+
+/-- info: 'MonoidProduct.dblFamily_fail_le' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.dblFamily_fail_le
+
+/-- info: 'MonoidProduct.hasDual_copyOut' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.hasDual_copyOut
+
+/-- info: 'MonoidProduct.hasDual_dblFamily' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.hasDual_dblFamily
+
+/-- info: 'MonoidProduct.summary2_succ_succ_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.summary2_succ_succ_eq
+
+/-- info: 'MonoidProduct.summary2_succ_zero_eq' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.summary2_succ_zero_eq
+
+/-- info: 'MonoidProduct.rank_doubling' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms MonoidProduct.rank_doubling
+
 /-! ## Stock and unitriangular products (Sections 8 and 9) -/
 
 /-- info: 'MonoidProduct.GenStock.gstockProfit_qQuery_third_le' depends on axioms: [propext, Classical.choice, Quot.sound] -/
